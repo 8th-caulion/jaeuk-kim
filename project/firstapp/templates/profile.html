@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+<body class="text-center">
+{% block contents %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">LikeLion</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="{% url 'home'%}">Home</a>
+        </nav>
+      </div>
+    </header>
+  
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">MY PROFILE</h1>
+      <p class="lead">멋쟁이 사자처럼 8기.</p>
+      <br>
+      <p class="lead">1997년 2월 14일 부산출생</p>
+      <br>
+      <p class="lead">3남매중 막내</p>
+      <br>
+      <p class="lead">I like 운동,독서,게임</p>
+      <br>
+    
+    </main>
+  
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      </div>
+    </footer>
+</div>
+{% endblock %}
+</body>
