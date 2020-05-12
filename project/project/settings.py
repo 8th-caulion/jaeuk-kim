@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't4&9&+8(z%*jrwbdbj41dl@ah4*2=@h@sosh6(pg$uzx*gda(^'
+SECRET_KEY = '4xk=8^*xq197ta^^kvq1op2h26mlqj@x#)3b4vs(&12)!1c)$r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,23 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'firstapp.apps.FirstappConfig',
-    'secondapp.apps.SecondappConfig',
-    'ckeditor',
-    'ckeditor_uploader',
+    'blogapp.apps.BlogappConfig',
+    'mainapp.apps.MainappConfig',
 ]
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -61,7 +56,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['project/templates'],
+        'DIRS': [os.path.join(BASE_DIR,'TEMPLATES')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'ASIA/SEOUL'
 
 USE_I18N = True
 
@@ -126,12 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'firstapp', 'static')
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'blogapp', 'static')
 ]
- 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = 'media/'
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
